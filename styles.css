@@ -39,14 +39,19 @@ main {
 
 .filter {
     margin-bottom: 20px;
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: flex-start; /* Alinear elementos al inicio */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.filter label {
+    margin-right: 10px; /* Espacio entre el label y el select */
 }
 
 .filter select {
-    width: 100%; /* Ajuste responsivo para pantallas pequeñas */
     padding: 10px;
     font-size: 16px;
-    max-width: 400px; /* Limitar el ancho máximo en pantallas grandes */
-    margin: 0 auto;
+    width: 100%; /* Ajustar el ancho del select en pantallas grandes */
 }
 
 .products-grid {
@@ -81,7 +86,8 @@ main {
 
 .product-card p {
     font-size: 14px; /* Reducir el tamaño de la fuente del precio */
-    color: #555;
+    color: green; /* Cambiar el color del precio a verde */
+    font-weight: bold; /* Hacer que el precio sea negrita */
 }
 
 footer {
@@ -107,9 +113,20 @@ footer .social-links a:hover {
 }
 
 /* Responsivo para móviles */
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .filter select {
+        width: 100%; /* Asegura que el select ocupe el ancho completo en pantallas pequeñas */
+        max-width: none; /* Elimina cualquier restricción de ancho máximo */
+        margin-top: 10px; /* Espacio entre el label y el select en pantallas pequeñas */
     }
 }
 
@@ -119,12 +136,13 @@ footer .social-links a:hover {
         align-items: center;
     }
 
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
     .filter select {
         width: 100%; /* Asegura que el select ocupe el ancho completo en pantallas pequeñas */
         max-width: none; /* Elimina cualquier restricción de ancho máximo */
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
+        margin-top: 10px; /* Espacio entre el label y el select en pantallas pequeñas */
     }
 }

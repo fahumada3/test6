@@ -1,11 +1,10 @@
-// Obtener productos desde la API y cargar los datos
 fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
     .then(products => {
         const productsGrid = document.getElementById('products-grid');
         const productFilter = document.getElementById('product-filter');
 
-        // Generar las opciones de filtro
+        
         products.forEach(product => {
             const option = document.createElement('option');
             option.value = product.id;
@@ -13,9 +12,9 @@ fetch('https://fakestoreapi.com/products')
             productFilter.appendChild(option);
         });
 
-        // Mostrar las cards de los productos
+        
         function displayProducts(productsToShow) {
-            productsGrid.innerHTML = ''; // Limpiar contenido previo
+            productsGrid.innerHTML = ''; 
             productsToShow.forEach(product => {
                 const card = document.createElement('div');
                 card.classList.add('product-card');
@@ -28,10 +27,10 @@ fetch('https://fakestoreapi.com/products')
             });
         }
 
-        // Mostrar todos los productos inicialmente
+        
         displayProducts(products);
 
-        // Filtrar productos por selección
+        
         productFilter.addEventListener('change', (e) => {
             const selectedProductId = e.target.value;
             if (selectedProductId === 'all') {

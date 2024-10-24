@@ -41,6 +41,14 @@ main {
     margin-bottom: 20px;
 }
 
+.filter select {
+    width: 100%; /* Ajuste responsivo para pantallas pequeñas */
+    padding: 10px;
+    font-size: 16px;
+    max-width: 400px; /* Limitar el ancho máximo en pantallas grandes */
+    margin: 0 auto;
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -109,6 +117,11 @@ footer .social-links a:hover {
     .navbar {
         flex-direction: column;
         align-items: center;
+    }
+
+    .filter select {
+        width: 100%; /* Asegura que el select ocupe el ancho completo en pantallas pequeñas */
+        max-width: none; /* Elimina cualquier restricción de ancho máximo */
     }
 
     .products-grid {

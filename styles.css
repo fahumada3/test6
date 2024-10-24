@@ -44,7 +44,7 @@ main {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 15px; /* Reducir el espacio entre las cards */
 }
 
 .product-card {
@@ -53,11 +53,27 @@ main {
     border: 1px solid #ccc;
     border-radius: 8px;
     text-align: center;
+    transition: transform 0.2s; /* Efecto de hover */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Aumentar ligeramente al hacer hover */
 }
 
 .product-card img {
     max-width: 100%;
-    height: auto;
+    height: 150px; /* Reducir la altura de la imagen */
+    object-fit: contain; /* Mantener la proporción de la imagen */
+}
+
+.product-card h3 {
+    font-size: 16px; /* Reducir el tamaño de la fuente del título */
+    margin: 10px 0; /* Reducir el margen superior e inferior */
+}
+
+.product-card p {
+    font-size: 14px; /* Reducir el tamaño de la fuente del precio */
+    color: #555;
 }
 
 footer {
